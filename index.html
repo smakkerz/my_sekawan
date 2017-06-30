@@ -1,0 +1,347 @@
+ <!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="assets/images/sekawan.png" type="image/x-icon">
+     <meta name="description" content="linux, terminal, cli, gnu, yum, apt-get" />
+     <meta name="keywords" content="linux, terminal, cli, gnu, yum, apt-get, sudo, su" />
+     <meta name="author" content="Yusuf Adhi Tomo" />
+
+     <meta property="og:url" content="artikel/5-perintah-dasar-linux-di-cli-terminal" />
+     <meta property="og:title" content=" Perintah dasar LINUX di CLI (Terminal) " />
+     <meta property="og:description" content="linux, terminal, cli, gnu, yum, apt-get" />
+     <meta property="og:site_name" content="SEKAWAN" />
+     <meta property="og:image" content="an-component/media/upload-gambar-artikel/Screenshot_pada_2017-06-27_09-09-26.png" />
+     <meta property="og:image:type" content="image/jpeg" />
+     <meta property="og:type" content="article" />
+  <title>Sekawan-artikel</title>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&amp;subset=latin">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+
+    <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
+    <!--
+    <link rel="canonical" href="http://www.example.com/">
+    -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="assets/material.min.css">
+    <link rel="stylesheet" href="assets/styles.css">
+    </head>
+<body>
+    <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+
+      <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
+        <div class="mdl-layout__header-row">
+          <span class="mdl-layout-title">
+            <a href="" style="color:#300;text-decoration:inherit;" >
+            <img src="assets/images/sekawan.png" width="35px"> SEKAWAN            </a>
+          </span>
+          <div class="mdl-layout-spacer"></div>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+            <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
+              <i class="material-icons" role="presentation">search</i>
+            </label>
+            <div class="mdl-textfield__expandable-holder">
+            <form method="post" action="form_visitors/search_article">
+              <input class="mdl-textfield__input" type='text' name='keyword' id="search">
+              <label class="mdl-textfield__label" for="search">Enter your query...</label>
+              </form>
+            </div>
+          </div>
+          <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="hdrbtn">
+            <i class="material-icons" role="presentation">more_vert</i>
+          </button>
+          <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right" for="hdrbtn">
+                        <li class="mdl-menu__item">
+                  <a href="#" style="color:#300;text-decoration:inherit;" >SEKAWAN</a>
+              </li>
+                            <li class="mdl-menu__item">
+                  <a href="#" style="color:#300;text-decoration:inherit;" >RESUME</a>
+              </li>
+                            <li class="mdl-menu__item">
+                  <a href="#" style="color:#300;text-decoration:inherit;" >PRIVASI</a>
+              </li>
+              <li class='mdl-menu__item'><a href='#features4-i' class='mdl-color-text--blue-grey-400' style='text-decoration: inherit;'> 
+                       <span class='material-icons'>user</span> Yusuf</a></li>          </ul>
+        </div>
+      </header>
+
+      <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
+        <header class="demo-drawer-header">
+          <img src="assets/images/user.jpg" class="demo-avatar">
+          <div class="demo-avatar-dropdown">
+            <span>Yusuf Adhi Tomo</span>
+            <div class="mdl-layout-spacer"></div>
+            <button id="accbtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+              <i class="material-icons" role="presentation">arrow_drop_down</i>
+              <span class="visuallyhidden">Accounts</span>
+            </button>
+            <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="accbtn">
+              <li class="mdl-menu__item">
+                <a href="" style="color:#300;text-decoration:inherit;" > 
+                <img src="assets/images/sekawan.png" width="20px"> SEKAWAN                </a>
+              </li>
+                            <li class="mdl-menu__item">
+                  <a href="#" style="color:#300;text-decoration:inherit;" >SEKAWAN</a>
+              </li>
+                            <li class="mdl-menu__item">
+                  <a href="#" style="color:#300;text-decoration:inherit;" >RESUME</a>
+              </li>
+                            <li class="mdl-menu__item">
+                  <a href="privacy" style="color:#300;text-decoration:inherit;" >PRIVASI</a>
+              </li>
+              <li class='mdl-menu__item'><a href='#features4-i' class='mdl-color-text--blue-grey-400' style='text-decoration: inherit;'> 
+                       <span class='material-icons'>user</span> Yusuf</a></li>            </ul>
+          </div>
+        </header>
+        <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
+          <a class="mdl-navigation__link" href=""><img src="assets/images/sekawan.png" width="20px">
+          <i class="mdl-color-text--blue-grey-400 material-icons" role="presentation"></i> Sekawan</a>
+
+          <a  class='mdl-navigation__link' href='#'  >
+                <i class='material-icons' role='presentation'>book</i> Review</a><a  class='mdl-navigation__link' href='kategori/4-pemrograman'  >
+                <i class='material-icons' role='presentation'>code</i> Pemrograman</a><a  class='mdl-navigation__link' href="#"  >
+                <i class='material-icons' role='presentation'>directions_run</i> Olah Raga</a><a  class='mdl-navigation__link' href='#'  >
+                <i class='material-icons' role='presentation'>local_library</i> Tutorial</a><a  class='mdl-navigation__link' href='#'  >
+                <i class='material-icons' role='presentation'>photo_camera</i> Fotografi</a>        </nav>
+      </div><style>
+.demo-card-image.mdl-card {
+  background: url('assets/images/A.jpg') center / cover;
+}
+.demo-card-image > .mdl-card__actions {
+  height: 45px;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.35);
+}
+.demo-card-image__filename {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+}
+.hastag {
+  font-size: 12px;
+  text-decoration: inherit;
+}
+</style>
+      <main class="mdl-layout__content mdl-color--grey-100">
+        <div class="mdl-grid demo-content">
+          <div class="demo-graphs mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--8-col">
+          <span class="demo-crumbs mdl-color-text--grey-500"> 
+          	April 14,2016 &nbsp;
+          	Smakkerz  &gt; &nbsp; Dibaca 70 kali &nbsp; &gt; Tag : &nbsp;
+                    <span class="hastag mdl-chip mdl-chip--contact">
+          <a href="tag/6-linux">
+          <span class="mdl-chip__contact mdl-color--teal mdl-color-text--white">l</span>
+          <span class="mdl-chip__text">linux</span>
+          </a>
+        </span> &nbsp;
+                <span class="hastag mdl-chip mdl-chip--contact">
+          <a href="tag/7-open-source">
+          <span class="mdl-chip__contact mdl-color--teal mdl-color-text--white">o</span>
+          <span class="mdl-chip__text">open source</span>
+          </a>
+        </span> &nbsp;
+                <span class="hastag mdl-chip mdl-chip--contact">
+          <a href="tag/9-fedora">
+          <span class="mdl-chip__contact mdl-color--teal mdl-color-text--white">f</span>
+          <span class="mdl-chip__text">fedora</span>
+          </a>
+        </span> &nbsp;
+                <span class="hastag mdl-chip mdl-chip--contact">
+          <a href="tag/10-debian">
+          <span class="mdl-chip__contact mdl-color--teal mdl-color-text--white">d</span>
+          <span class="mdl-chip__text">debian</span>
+          </a>
+        </span> &nbsp;
+                  </span>
+            <h2> Perintah dasar LINUX di CLI (Terminal) </h2>
+                <span class="demo-card-image mdl-card mdl-shadow--2dp">
+                  <div class="mdl-card__title mdl-card--expand"></div>
+                  <div class="mdl-card__actions">
+                    <span class="demo-card-image__filename">Screenshot_pada_2017-06-27_09-09-26.png</span>
+                  </div>
+                </span>
+          <span style="text-align: justify;">
+            <h3><strong>Perintah-Perintah Dasar Linux </strong><small>( bagian 1 )</small></h3>
+<p>Sebagai panduan Anda, berikut adalah daftar perintah secara alfabet. Sebenarnya, anda dapat saja <strong><strong>menekan tab dua kali </strong></strong>untuk melihat semua kemungkinan perintah yang dapat digunakan. Misalnya Anda ingin mengetahui perintah apa saja yang dimulai dengan huruf a, maka Anda cukup mengetikkan <strong><strong>a</strong></strong> lalu tekan tab dua kali!</p>
+<p>Daftar Perintah Menurut Alfabet</p>
+<p>&amp; adduser alias bg cat cd chgrp chmod chown cp fg find grep gzip halt hostname kill less login logout ls man mesg mkdir more mount mv passwd pwd rm rmdir shutdown su tail talk tar umount unalias unzip wall who xhost + xset zip </p>
+<h3><strong><strong>&amp;</strong></strong></h3>
+<p>Perintah <strong><strong>&amp;</strong></strong> digunakan untuk menjalan perintah di belakang (<em><em>background</em></em>) Contoh:</p>
+<p><strong><strong>wget</strong></strong> <a href="http://github.com/smakkerz"><u>http://github.com/smakkerz</u></a> <strong><strong>&amp;</strong></strong> </p>
+<p>Perintah <strong><strong>&amp;</strong></strong> dipakai dibelakang perintah lain untuk menjalankannya di <em><em>background</em></em>. Apa itu jalan di background? Jalan di<em><em>background </em></em>maksudnya adalah kita membiarkan sistem untuk menjalankan perintah sendiri tanpa partisipasi kita, dan membebaskan shell/command prompt agar bisa dipergunakan menjalankan perintah yang lain.</p>
+<p>Lihat juga:</p>
+<p>Silahkan lihat juga perintah <strong><strong>bg</strong></strong> dan <strong><strong>fg</strong></strong>.</p>
+<h3><strong><strong>adduser</strong></strong></h3>
+<p>Perintah <strong><strong>adduser </strong></strong>digunakan untuk menambahkan user Biasanya hanya dilakukan oleh <em><em>root </em></em>untuk menambahkan user atau account yg baru. Setelah perintah ini bisa dilanjutkan dengan perintah passwd, yaitu perintah untuk membuat password bagi user tersebut. Contoh:</p>
+<p># <strong><strong>adduser</strong></strong> ini_linuxku</p>
+<p># <strong><strong>passwd</strong></strong> linuxmu_mana#</p>
+<p>Perhatikan bahwa semua perintah yang membutuhkan akses root, di sini saya tulis dengan dengan menggunakan tanda <strong><strong>#</strong></strong>, untuk memudahkan anda membedakannya dengan perintah yang tidak perlu akses root.</p>
+<h3><strong><strong>alias</strong></strong></h3>
+<p>Digunakan untuk memberi nama lain dari sebuah perintah. Alias digunakan untuk memudahkan agar tidak harus mengetikkan perintah yang panjang, tapi cukup aliasnya saja. Misalnya bila anda ingin perintah <strong><strong>ls </strong></strong>dapat juga dijalankan dengan mengetikkan perintah dir, maka buatlah aliasnya sbb:</p>
+<p>$ <strong><strong>alias </strong></strong>dir=ls</p>
+<p>Kalau Anda suka dengan tampilan berwarna-warni, cobalah bereksperimen dengan perintah berikut:</p>
+<p>$ <strong><strong>alias </strong></strong>dir="ls -ar --color:always"</p>
+<p><br>Untuk melihat perintah-perintah apa saja yang mempunyai nama lain saat itu, cukup ketikkan <strong><strong>alias </strong></strong>saja (tanpa argumen). Lihat juga perintah <strong><strong>unalias</strong></strong>. Jika Anda menjalankan perintah <strong><strong>adduser</strong></strong>, anda akan diminta memasukkan password untuk user yang Anda buat. Isikan password untuk user baru tersebut dua kali dengan kata yang sama.</p>
+<h3><strong><strong>apt-cache (Khusus Ubuntu dan debian serta turunannya )<br></strong></strong></h3>
+<p>Untuk mencari aplikasi yang telah didownload oleh apt-get.</p>
+<p>$ <strong><strong>apt-cache search </strong></strong>apache2</p>
+<h3><strong><strong>apt-get </strong>(Khusus Ubuntu dan debian serta turunannya )</strong></h3>
+<p>Untuk menginstall atau uninstall aplikasi di linux, sebagian keluarga linux yang menggunakan adalah debian dan turunannya. Contoh untuk menginstall aplikasi apache:</p>
+<p>$ <strong><strong>apt-get install </strong></strong>apache2</p>
+<p>Untuk mengecek pembaruan dari aplikasi yang terinstall di linux.</p>
+<p>$ <strong><strong>apt-get update</strong></strong></p>
+<p>Untuk memperbarui aplikasi di linux, biasanya digunakan setelah apt-get update.</p>
+<p>$ <strong><strong>apt-get upgrade</strong></strong></p>
+<h3><strong>dnf dan yum (Khusus Redhat dan Fedora serta turunannya )<br></strong></h3>
+<p>Untuk mencari aplikasi yang akan dipasang.</p>
+<p>$ <strong>dnf search</strong> apache2</p>
+<p>$ <strong>yum</strong><strong> search</strong> apache2</p>
+<p>Untuk menginstall atau uninstall aplikasi di linux harus menggunakan hak akses root, sebagian keluarga linux yang menggunakan adala redhat dan turunannya. Contoh untuk menginstall aplikasi apache:</p>
+<p>$ <strong>sudo yum<strong> install</strong></strong> apache2</p>
+<p>$ <strong>sudo <strong>dnf install</strong></strong> apache2</p>
+<p>Untuk mengecek pembaruan dari aplikasi yang terinstall di linux dan bila belum ada aplikasi yang dimaksud maka akan diinstall dengan memperbarui repo terlebih dahulu.</p>
+<p>$ <strong>sudo yum<strong> update</strong></strong></p>
+<p><strong><strong>$ <strong>sudo <strong>dnf update</strong></strong></strong></strong></p>
+<p>Untuk memperbarui aplikasi di linux, biasanya dibutuhkan dan akan diperbarui pula repo juga.</p>
+<h4 style="padding-left: 30px;"> Perbedaan <strong>yum</strong> dan <strong>dnf</strong></h4>
+<p> </p>
+<p> </p>
+<p>Sumber : wikipedia dan beberapa sumber lainnya.</p>          </span>
+    <h3>Baca Juga</h3>
+      <hr>
+        <ul>
+                <li>
+            <a href="artikel/5-perintah-dasar-linux-di-cli-terminal" class="mdl-button mdl-js-button mdl-js-ripple-effect">
+                  Perintah dasar LINUX di CLI (Terminal)</a>
+        </li>
+                </ul>
+      
+    </div>
+          <div class="demo-cards mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-grid mdl-grid--no-spacing">
+            <div class="demo-cards mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--12-col-desktop">
+            <div class="mdl-card__title-text mdl-shadow--1dp mdl-card--expand mdl-color--white-600">
+              <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">Cari
+            <label class="mdl-button mdl-js-button mdl-button--icon" for="search1">
+              <i class="material-icons" role="presentation">search</i>
+            </label>
+            <div class="mdl-textfield__expandable-holder">
+            <form method="post" action="form_visitors/search_article">
+              <input class="mdl-textfield__input" type="text" name="keyword" id="search1">
+              <label class="mdl-textfield__label" for="search">Enter your query...</label>
+            </form>
+            </div>
+            </div>
+          </div>
+              <div class="mdl-card__title mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--12-col-desktop mdl-card--expand mdl-color--grey-600">
+                <h2 class="mdl-card__title-text">Artikel Lain</h2>
+              </div>
+          </div>
+            <div class="demo-separator mdl-cell--1-col"></div>
+              <style>
+.demo-updates .mdl-card__title {
+  height: 190px;
+  background-position: 1% 1%;
+  background-repeat: round;
+}
+.demo-updates .mdl-card__actions a {
+  color: #00ACC6;
+  text-decoration: none;
+}
+.demo-text {
+  height: 40px;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.44);
+}
+.demo-filename {
+  color: #fff;
+  font-weight: 550;
+  font-size: 16px;
+}
+</style>
+            <div class="demo-updates mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--12-col-desktop">
+              <div class="mdl-card__title mdl-card--expand mdl-color--teal-300" style="background-image: url('assets/images/mbr-5.jpg');">
+              <span class="demo-text">
+                <h2 class="demo-filename mdl-card__title-text"> Cras molestie orci id lacus sodales hendrerit</h2>
+                </span>
+              </div>
+              <div class="mdl-card__supporting-text mdl-color-text--grey-600" style="text-align: justify;">
+                Nunc sed magna id urna bibendum aliquam sed ac nibh. Nulla maximus pellentesque felis et ornare. Nunc placerat dui at tortor luctus rhoncus. Sed ut&#8230;                &nbsp; April 14,2016&nbsp; Dibaca 143 kali              </div>
+              <div class="mdl-card__actions mdl-card--border">
+                <a href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect">
+                <i class="material-icons">local_library</i> 
+                Baca juga</a> &nbsp;
+                <span style="text-align: right;"><small>Smakkerz</small></span>
+              </div>
+            </div>
+              <div class="demo-separator mdl-cell--1-col"></div>
+            <div class="demo-updates mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--12-col-desktop">
+              <div class="mdl-card__title mdl-card--expand mdl-color--teal-300" style="background-image: url('assets/images/mbr1.jpg');">
+              <span class="demo-text">
+                <h2 class="demo-filename mdl-card__title-text">Perintah dasar LINUX di CLI (Terminal)</h2>
+                </span>
+              </div>
+              <div class="mdl-card__supporting-text mdl-color-text--grey-600" style="text-align: justify;">
+                Perintah-Perintah Dasar Linux ( bagian 1 )
+Sebagai panduan Anda, berikut adalah daftar perintah secara alfabet. Sebenarnya, anda dapat saja menekan tab dua kali untuk melihat&#8230;                &nbsp; April 14,2016&nbsp; Dibaca 70 kali              </div>
+              <div class="mdl-card__actions mdl-card--border">
+                <a href="artikel/5-perintah-dasar-linux-di-cli-terminal" class="mdl-button mdl-js-button mdl-js-ripple-effect">
+                <i class="material-icons">local_library</i> 
+                Baca juga</a> &nbsp;
+                <span style="text-align: right;"><small>Smakkerz</small></span>
+              </div>
+            </div>
+              <div class="demo-separator mdl-cell--1-col"></div>
+            <div class="demo-updates mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--12-col-desktop">
+              <div class="mdl-card__title mdl-card--expand mdl-color--teal-300" style="background-image: url('assets/images/mbr.jpg');">
+              <span class="demo-text">
+                <h2 class="demo-filename mdl-card__title-text">Pellentesque consectetur nunc eget nisi gravida</h2>
+                </span>
+              </div>
+              <div class="mdl-card__supporting-text mdl-color-text--grey-600" style="text-align: justify;">
+                Donec efficitur orci velit, interdum bibendum nulla vulputate eget. Nam dapibus eros eleifend, fringilla magna vitae, porttitor nibh. Fusce mollis nisl non tempus vulputate. Interdum&#8230;                &nbsp; April 14,2016&nbsp; Dibaca 55 kali              </div>
+              <div class="mdl-card__actions mdl-card--border">
+                <a href="artikel/3-pellentesque-consectetur-nunc-eget-nisi-gravida" class="mdl-button mdl-js-button mdl-js-ripple-effect">
+                <i class="material-icons">local_library</i> 
+                Baca juga</a> &nbsp;
+                <span style="text-align: right;"><small>Smakkerz</small></span>
+              </div>
+            </div>
+              <div class="demo-separator mdl-cell--1-col"></div>
+                        <div class="demo-options mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--12-col-desktop">
+              <div class="mdl-card__title mdl-card--expand mdl-color--teal-300">
+                <h2 class="mdl-card__title-text"><img src="assets/images/sekawan.png" height ="28px">EKAWAN</h2>
+              </div>
+              <div class="mdl-card__supporting-text mdl-color-text--grey-600">
+                Sekawan membagikan pengalaman baru untuk semua kawan-kawan (<b>SEKAWAN</b>).
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+                <a href="" class="mdl-button mdl-js-button mdl-js-ripple-effect">Now</a>
+              </div>
+            </div>
+          </div>
+          </div>
+<footer class="demo-footer mdl-mini-footer mdl-color--blue-grey-800">
+          <div class="mdl-mini-footer--left-section">
+            <ul class="mdl-mini-footer--link-list">
+              <li><a href="#>">2013-2017</a> &copy;</li>
+              <li><a href="https://github.com/smakkerz"  class="mdl-shadow--2dp" target="blank">
+              <img src="assets/images/git.png" width="21px" class="mdl-color--white"></img>_5M</a> ||
+                <a href="facebook.com/smakkerz" class="mdl-shadow--2dp" target="blank">
+                <img src="assets/images/fb.png" class="mdl-color--indigo" width="21px"></img>_5M</a></li>
+              <li>Mdl</li>
+            </ul>
+          </div>
+        </footer>
+        </main>
+</div>
+<script src="assets/material.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.jssocials/1.1.0/jssocials.min.js"></script>
+</script>
+</body>
+</html>
